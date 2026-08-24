@@ -16,7 +16,10 @@ exports.register = async (req, res, next) => {
     });
     req.session.user = { id, nome, email, role: papel };
     req.flash("success", "Conta criada com sucesso.");
-    res.redirect("/");
+    req.session.save((error) => {
+      if (error) return next(error);
+      res.redirect("/");
+    });
   } catch (error) {
     next(error);
   }
@@ -37,7 +40,10 @@ exports.login = async (req, res, next) => {
         email: user.email,
         role: user.papel,
       };
-      res.redirect("/");
+      req.session.save((saveError) => {
+        if (saveError) return next(saveError);
+        res.redirect("/");
+      });
     });
   } catch (error) {
     next(error);
