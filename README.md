@@ -25,14 +25,14 @@ Abra `http://localhost:3000`.
 
 ## Variáveis de ambiente
 
-| Variável | Descrição |
-| --- | --- |
-| `PORT` | Porta do servidor (padrão 3000) |
-| `SESSION_SECRET` | Segredo longo usado para assinar a sessão |
-| `DB_HOST`, `DB_PORT` | Host e porta MySQL |
-| `DB_NAME`, `DB_USER`, `DB_PASSWORD` | Credenciais do banco |
-| `DB_SSL` | Use `true` no banco em nuvem com SSL/TLS |
-| `NODE_ENV` | Use `production` no deploy |
+| Variável                            | Descrição                                 |
+| ----------------------------------- | ----------------------------------------- |
+| `PORT`                              | Porta do servidor (padrão 3000)           |
+| `SESSION_SECRET`                    | Segredo longo usado para assinar a sessão |
+| `DB_HOST`, `DB_PORT`                | Host e porta MySQL                        |
+| `DB_NAME`, `DB_USER`, `DB_PASSWORD` | Credenciais do banco                      |
+| `DB_SSL`                            | Use `true` no banco em nuvem com SSL/TLS  |
+| `NODE_ENV`                          | Use `production` no deploy                |
 
 ## Deploy
 

@@ -1,1 +1,28 @@
-<%- include('partials/header') %><section class="hero"><p class="eyebrow">EVENTOS QUE CONECTAM</p><h1>Encontre seu próximo evento.</h1><p>Eventos acadêmicos e corporativos reunidos em um só lugar.</p><% if (user?.role === 'organizador') { %><a class="button" href="/organizer/events/new">Criar evento</a><% } %></section><h2>Próximos eventos</h2><section class="grid"><% if (!events.length) { %><p>Nenhum evento agendado por enquanto.</p><% } %><% events.forEach(event => { %><article class="card"><p class="eyebrow"><%= new Date(event.data_hora).toLocaleDateString('pt-BR') %></p><h3><%= event.titulo %></h3><p><%= event.local %></p><p class="muted">Por <%= event.organizador %> · <%= event.vagas %> vagas</p><a href="/events/<%= event.id %>">Ver detalhes →</a></article><% }) %></section><%- include('partials/footer') %>
+<%- include('partials/header') %>
+<section class="hero">
+  <p class="eyebrow">EVENTOS QUE CONECTAM</p>
+  <h1>Encontre seu próximo evento.</h1>
+  <p>Eventos acadêmicos e corporativos reunidos em um só lugar.</p>
+  <% if (user?.role === 'organizador') { %><a
+    class="button"
+    href="/organizer/events/new"
+    >Criar evento</a
+  ><% } %>
+</section>
+<h2>Próximos eventos</h2>
+<section class="grid">
+  <% if (!events.length) { %>
+  <p>Nenhum evento agendado por enquanto.</p>
+  <% } %><% events.forEach(event => { %>
+  <article class="card">
+    <p class="eyebrow">
+      <%= new Date(event.data_hora).toLocaleDateString('pt-BR') %>
+    </p>
+    <h3><%= event.titulo %></h3>
+    <p><%= event.local %></p>
+    <p class="muted">Por <%= event.organizador %> · <%= event.vagas %> vagas</p>
+    <a href="/events/<%= event.id %>">Ver detalhes →</a>
+  </article>
+  <% }) %>
+</section>
+<%- include('partials/footer') %>

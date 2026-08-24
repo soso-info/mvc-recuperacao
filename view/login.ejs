@@ -1,1 +1,21 @@
-<%- include('partials/header') %><section class="form-card"><h1>Entrar</h1><form action="/auth/login" method="post"><label>E-mail<input name="email" type="email" required autocomplete="email"></label><label>Senha<input name="senha" type="password" required autocomplete="current-password"></label><button>Entrar</button></form><p>Não tem uma conta? <a href="/auth/register">Cadastre-se</a>.</p></section><%- include('partials/footer') %>
+<%- include('partials/header') %>
+<section class="form-card">
+  <h1>Entrar</h1>
+  <form action="/auth/login" method="post">
+    <label
+      >E-mail<input
+        name="email"
+        type="email"
+        required
+        autocomplete="email" /></label
+    ><label
+      >Senha<input
+        name="senha"
+        type="password"
+        required
+        autocomplete="current-password" /></label
+    ><button>Entrar</button>
+  </form>
+  <p>Não tem uma conta? <a href="/auth/register">Cadastre-se</a>.</p>
+</section>
+<%- include('partials/footer') %>

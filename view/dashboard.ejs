@@ -1,1 +1,33 @@
-<%- include('partials/header') %><div class="title-row"><div><p class="eyebrow">PAINEL DO ORGANIZADOR</p><h1>Meus eventos</h1></div><a class="button" href="/organizer/events/new">Novo evento</a></div><section class="grid"><% if (!events.length) { %><p>Você ainda não criou eventos.</p><% } %><% events.forEach(event => { %><article class="card"><h3><%= event.titulo %></h3><p><%= new Date(event.data_hora).toLocaleString('pt-BR') %></p><div class="actions"><a href="/organizer/events/<%= event.id %>/edit">Editar</a><form action="/organizer/events/<%= event.id %>?_method=DELETE" method="post"><button class="link danger" onclick="return confirm('Excluir este evento?')">Excluir</button></form></div></article><% }) %></section><%- include('partials/footer') %>
+<%- include('partials/header') %>
+<div class="title-row">
+  <div>
+    <p class="eyebrow">PAINEL DO ORGANIZADOR</p>
+    <h1>Meus eventos</h1>
+  </div>
+  <a class="button" href="/organizer/events/new">Novo evento</a>
+</div>
+<section class="grid">
+  <% if (!events.length) { %>
+  <p>Você ainda não criou eventos.</p>
+  <% } %><% events.forEach(event => { %>
+  <article class="card">
+    <h3><%= event.titulo %></h3>
+    <p><%= new Date(event.data_hora).toLocaleString('pt-BR') %></p>
+    <div class="actions">
+      <a href="/organizer/events/<%= event.id %>/edit">Editar</a>
+      <form
+        action="/organizer/events/<%= event.id %>?_method=DELETE"
+        method="post"
+      >
+        <button
+          class="link danger"
+          onclick="return confirm('Excluir este evento?');"
+        >
+          Excluir
+        </button>
+      </form>
+    </div>
+  </article>
+  <% }) %>
+</section>
+<%- include('partials/footer') %>

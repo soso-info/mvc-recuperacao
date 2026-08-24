@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Sistema MVC de gestão de eventos e inscrições",
   "main": "index.js",
-  "scripts": { "start": "node index.js", "dev": "node --watch index.js" },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
